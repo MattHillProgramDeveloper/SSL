@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 2. Create a view under views called header.php -->
 <html lang="en">
 <head>
 
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SSL</title>
+    <!-- 7 Apply style to your final work, and make sure you have a header, body, and a footer. -->
     <style>
         .active{
             color: white;
@@ -20,7 +22,7 @@
         }
         .wrapper{
             min-height: 100%;
-            margin-bottom: -50px;
+            background-color: #f9f9f9;
         }
         .footer,
         .push{
@@ -29,25 +31,27 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
     <h1>Header</h1>
+    
 <?php
-
+    //6 Open up the view file and loop through the data in html concatenated form and display your navigation menu items
     foreach($data["navigation"]as $key=>$value){
+        //8 Your application must show which page the current user is visiting.
         //This navigation loop tests if the current $pagename sent in the $data variable matches the $navigation=>$value.
-        //If it does it changes the element class to active. Otherwise, the element is left to be a normal button.
+        //If it does it changes the element class to active. 
         if ($key == $data["pagename"]){
             echo "<button class='active' onclick=\"window.location.href = '".$value."';\">".strtoupper($key)."</button>";
               
         }else{
+        //Otherwise, the element is left to be a normal button.
             echo "<button onclick=\"window.location.href = '".$value."';\">".strtoupper($key)."</button>";
               
         }
 
-
-       
     }
 
 ?>
+
+<div class="wrapper">
 
  
