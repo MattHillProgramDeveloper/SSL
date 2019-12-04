@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<!-- 2. Create a view under views called header.php -->
+<!-- 2. Create a view under views called header.php
+     Here is that.
+ -->
 <html lang="en">
 <head>
 

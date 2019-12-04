@@ -1,20 +1,22 @@
 <?php
 //1. Create or use existing controller in controller
+//I stuck with the original welcome controller
 class welcome extends AppController{
-//3. Open controller file and create a method
     public function __construct($parent){
 
         $this->parent = $parent;
 
     }
 
+    //3. Open controller file and create a method
     public function home(){
         $data = array();
         $data["pagename"] = "home";
         //4. Inside the method create an array with keys and values (Menu Labels)
-        //This array had to be different than the non "welcome" screens in order for the links to be correct.
+        //I relabled everything to "home" instead of index because I wanted them all to match.
         $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"welcome/portfolio", "about"=>"welcome/about");
         //5. Inside the same method load a view and pass data to the view
+        //Here we call a header body and footer while passing $data to the header view
         $this->parent->getView("header",$data);
         $this->parent->getView("homeBody");
         $this->parent->getView("footer");
