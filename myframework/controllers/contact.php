@@ -1,6 +1,6 @@
 <?php
 
-class welcome extends AppController{
+class contact extends AppController{
     public function __construct($parent){
 
         $this->parent = $parent;
@@ -9,12 +9,12 @@ class welcome extends AppController{
 
     public function index(){
         $data = array();
-        $data["pagename"] = "home";
+        $data["pagename"] = "about";
 
         $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "contact"=>"/contact");
         
         $this->parent->getView("header",$data);
-        $this->parent->getView("homeBody");
+        $this->parent->getView("contactBody");
         $this->parent->getView("footer");
     }
 

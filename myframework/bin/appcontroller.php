@@ -25,9 +25,9 @@ class AppController{
                     
             }else{
            		
-           		$methodVariable = array($appcon, 'home');
+           		$methodVariable = array($appcon, 'index');
 				if(is_callable($methodVariable, false, $callable_name)){
-            	$appcon->home($this);
+            	$appcon->index($this);
             
             	}
             }
@@ -41,9 +41,9 @@ class AppController{
                 $appcon->config['defaultController'][1]();
             }else{
            		
-           		$methodVariable = array($appcon, 'home');
+           		$methodVariable = array($appcon, 'index');
 				if(is_callable($methodVariable, false, $callable_name)){
-            	$appcon->home($this);
+            	$appcon->index($this);
             
             	}
             }
