@@ -9,7 +9,7 @@ class contact extends AppController{
 
     public function index(){
         $data = array();
-        $data["pagename"] = "about";
+        $data["pagename"] = "contact";
 
         $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "contact"=>"/contact");
         

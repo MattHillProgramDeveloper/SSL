@@ -15,7 +15,7 @@
 <nav class="navbar bg-dark navbar-dark navbar-expand-sm">
   <div class="container">
 
-  <a class="navbar-brand" href="\test">SSL Photography</a>
+  <a class="navbar-brand" href="\welcome">SSL Photography</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggledNavItems" 
     aria-controls="toggledNavItems"
