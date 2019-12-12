@@ -11,7 +11,7 @@ class contact extends AppController{
         $data = array();
         $data["pagename"] = "contact";
 
-        $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "contact"=>"/contact");
+        $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "register"=>"/register", "contact"=>"/contact");
         
         $this->parent->getView("header",$data);
         $this->parent->getView("contactBody");
