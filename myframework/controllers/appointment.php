@@ -13,8 +13,11 @@ class appointment extends AppController{
 
         $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
         
+        $random = substr( md5(rand()), 0, 7);
+        $data["cap"]=$random;
+
         $this->parent->getView("header",$data);
-        $this->parent->getView("appointment");
+        $this->parent->getView("appointment",$data);
         $this->parent->getView("footer");
     }
 
@@ -35,6 +38,11 @@ class appointment extends AppController{
         //var_dump($_POST);
         $errorArray = array();
         //header("location:/appointment?msg=Thank You!");
+
+        if(!@$_POST["usercatpcha"] || $_POST["usercatpcha"]!=$_SESSION["picture"]){
+            array_push($errorArray,"Captcha Incorrect");
+            }
+        
 
         if(empty($_POST["firstname"])){
             array_push($errorArray, "First Name is missing");
