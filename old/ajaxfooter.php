@@ -14,5 +14,36 @@ All Photos Courtesy of
     })
 </script>
 
+
+<!-- This is for the AJAX request on the login page-->
+<script >
+
+function submitAjax(){
+
+    let emailF = $("#email").val()
+    let passwordF = $("#password").val()
+    let typeF = "ajax";
+
+    $.ajax({
+
+        method: "POST",
+        url: "/login/recv",
+        data: {email: emailF , password: passwordF, type: typeF},
+        success:function(data){
+            if(data == "good"){
+                window.document.location.href="/login/success"
+            }else{
+                window.document.location.href="/login?msg=Invalid login and password"
+
+            }
+        }
+    });
+}
+
+
+
+</script>
+
+
 </body>
 </html>

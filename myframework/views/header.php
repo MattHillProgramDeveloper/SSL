@@ -27,7 +27,18 @@
     <div class="collapse navbar-collapse" id="toggledNavItems">
       <div class="navbar-nav ml-auto">
       <?php
-     foreach($data["navigation"]as $key=>$value){
+
+    $navArray = $data["navigation"];
+    if(@$_SESSION["isloggedin"] && @$_SESSION["isloggedin"] == TRUE){
+
+          $navArray = array_diff($navArray, ["login" => "/login"]);
+          $navArray["crud"]="/crud";
+          $navArray["logout"]="/logout";
+    }
+
+     foreach($navArray as $key=>$value){
+
+
         //This navigation loop tests if the current $pagename sent in the $data variable matches the $navigation=>$value.
         //If it does it changes the element class to active. 
         if ($key == $data["pagename"]){

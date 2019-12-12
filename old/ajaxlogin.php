@@ -34,21 +34,15 @@ class login extends AppController{
 
     public function recv(){
 
-
         if($_POST["email"] == "mike@aol.com" && $_POST["password"] == "1234"){
-            
-            $_SESSION["isloggedin"] = TRUE;
-            $_SESSION["useremail"] = $_POST["email"];
 
-            header("location:/crud");
+            echo "good";
+
         }else{
 
-            $_SESSION["isloggedin"] = FALSE;
-            $_SESSION["useremail"] = "";
+            echo "bad";
 
-            header("location:/login?msg=Invalid login and password");
         }
-        
     }
 
 
