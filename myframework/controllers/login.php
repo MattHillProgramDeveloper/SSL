@@ -9,7 +9,7 @@ class login extends AppController{
 
     public function index(){
         $data = array();
-        $data["pagename"] = "register";
+        $data["pagename"] = "login";
 
         $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
 
@@ -22,7 +22,7 @@ class login extends AppController{
     public function success(){
 
         $data = array();
-        $data["pagename"] = "register";
+        $data["pagename"] = "login";
 
                 $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
         
