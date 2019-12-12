@@ -1,5 +1,5 @@
 <main class="container">
-    
+    <!-- Ajax Request -->
 
     <div class="row">
     <h2> Login </h2>
@@ -33,7 +33,7 @@
 
             <div class="form-group input-group">
                 <div class="form-group">
-                
+                    <!-- Ajax Request Button -->
                     <a href="javascript:void(0)" onclick="submitAjax()" class="btn btn-primary btn-block">Login</a>
                 
                 </div>

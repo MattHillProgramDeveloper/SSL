@@ -1,5 +1,5 @@
 <main class="container">
-
+ <!-- Form Request -->
 <h5>
 
 Leave us your information and we will contact you to set up an appointment.
@@ -54,21 +54,13 @@ Leave us your information and we will contact you to set up an appointment.
 
   </div>
   <div class="form-group input-group">
-      
+      <!-- Form Submit Button -->
     <input type="submit" class="btn btn-primary btn-block" value="Submit"/>
       
   </div>
   <p>  <!-- Popover -->
     We always respect your <span style="color: lightblue" tabindex="0" data-toggle="popover" data-trigger="focus" title="Privacy" data-content="We will never share your information with anyone.">privacy</span>.
   </p>  <!-- /Popover -->
-
-
-
-
-
-
- 
-
 
 
 </form>
