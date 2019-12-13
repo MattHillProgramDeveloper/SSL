@@ -33,6 +33,7 @@
 
           $navArray = array_diff($navArray, ["login" => "/login"]);
           $navArray["crud"]="/crud";
+          $navArray["profile"] = "/profile";
           $navArray["logout"]="/logout";
     }
 
