@@ -40,7 +40,7 @@ class login extends AppController{
              
         }//End of User Search Loop
 
-        if(@$_SESSION["isloggedin"] == TRUE){//if user is logged in go to crud page
+        if(@$_SESSION["isloggedin"] == TRUE){//if user is logged in go to profile page
             fclose($file);
             header("location:/profile");
         }else{//if user is not logged in, bounce them to the error notification and wipe $_SESSION variables
