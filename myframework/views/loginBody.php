@@ -25,7 +25,7 @@
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    
+
                     <input id="password" name="password" type="text" class="form-control" placeholder="Password"/>
 
                 </div>

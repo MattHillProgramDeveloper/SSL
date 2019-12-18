@@ -18,9 +18,29 @@ class login extends AppController{
         $this->parent->getView("footer");
     }
 
-
-
+//Database Login
     public function recv(){
+
+        if($_REQUEST["email"] && $_REQUEST["password"]){
+
+            $data = $this->parent->getModel("users")->select("select * from users where email = :email and password =:password",array(":email"=>$_REQUEST["email"],":password"=>sha1($_REQUEST["password"])));
+
+            if($data){
+
+                $_SESSION["isloggedin"] = TRUE;
+                header("location:/crud");
+            }else{
+                $_SESSION["isloggedin"] = FALSE;
+                $_SESSION["useremail"] = "";
+                header("location:/login?msg=Invalid login and password combination");
+            }
+
+        }
+
+    }
+
+//Text File Login
+    public function recvCopy(){
 
 
         $file = fopen("./assets/login.txt","r"); //opens the text file
@@ -37,12 +57,13 @@ class login extends AppController{
                 $_SESSION["bio"] = $userLookup[2];//THIS IS WHERE THE USER PROFILE DATA IS STORED.
                 break;//break out of the search loop once the login credentials are matched
             }
+
              
         }//End of User Search Loop
 
         if(@$_SESSION["isloggedin"] == TRUE){//if user is logged in go to profile page
             fclose($file);
-            header("location:/profile");
+            header("location:/crud");
         }else{//if user is not logged in, bounce them to the error notification and wipe $_SESSION variables
             $_SESSION["isloggedin"] = FALSE;
             $_SESSION["useremail"] = "";
