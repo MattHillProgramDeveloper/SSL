@@ -39,7 +39,8 @@ class login extends AppController{
 
     }
 
-//Text File Login
+//Text File Login no longer used
+//Leaving this because I want to redo it more efficiently.
     public function recvCopy(){
 
 

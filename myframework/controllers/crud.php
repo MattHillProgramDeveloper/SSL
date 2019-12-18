@@ -10,7 +10,7 @@ class crud extends AppController{
         }
 
     }
-
+//Read Fruit Method
     public function index(){
 
         $data = array();
@@ -26,7 +26,7 @@ class crud extends AppController{
         $this->parent->getView("footer");
 
     }
-
+//Create Fruit Methods
     public function addForm(){
 
         $data = array();
@@ -46,6 +46,46 @@ class crud extends AppController{
     
         $sql = "insert into fruit_table (name) values (:name)";
         $data["fruit"] = $this->parent->getModel("fruit")->insert($sql,array(":name"=>$_REQUEST["name"]));
+
+        header("location:/crud");
+    }
+
+//Update Fruit Methods
+    public function updateForm(){
+
+        $data = array();
+        $data["pagename"] = "crud";
+
+        $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
+
+        $id = $this->parent->urlPathParts[2];
+
+        $sql = "select * from fruit_table where id = :id";
+        $data["fruit"] = $this->parent->getModel("fruit")->select($sql, array(":id"=>$id));
+
+        $this->parent->getView("header",$data);
+        $this->parent->getView("updateForm",$data);
+        $this->parent->getView("footer");
+
+    }
+
+    public function updateAction(){
+
+        $id = $this->parent->urlPathParts[2];
+        $name = $_REQUEST["name"];
+        $sql = "update fruit_table set name = :name where id=:id";
+        $data["fruit"] = $this->parent->getModel("fruit")->update($sql,array(":name"=>$name,":id"=>$id));
+
+        header("location:/crud");
+    }
+
+//Delete Fruit Methods
+    public function deleteAction(){
+
+        $id = $this->parent->urlPathParts[2];
+    
+        $sql = "delete from fruit_table where id=:id";
+        $data["fruit"] = $this->parent->getModel("fruit")->insert($sql,array(":id"=>$id));
 
         header("location:/crud");
     }
