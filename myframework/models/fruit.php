@@ -37,8 +37,6 @@ class fruit{
 
         $this->sql = $this->parent->db->prepare($sql);
         $result = $this->sql->execute($val);
-        // $data = $this->sql->fetchAll(PDO::FETCH_ASSOC);
-        // return $data;
 
     }
 
