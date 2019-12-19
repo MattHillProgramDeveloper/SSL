@@ -28,6 +28,7 @@ class login extends AppController{
             if($data){
 
                 $_SESSION["isloggedin"] = TRUE;
+                $_SESSION["useremail"] = $_POST["email"];
                 header("location:/profile");
             }else{
                 $_SESSION["isloggedin"] = FALSE;
