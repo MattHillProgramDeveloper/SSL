@@ -56,8 +56,8 @@ class crud extends AppController{
         $data = array();
         $data["pagename"] = "crud";
 
-        $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
-
+        $data["navigation"] = array("home"=>"/welcome","Books Api"=>"/books/showApi", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
+        
         $id = $this->parent->urlPathParts[2];
 
         $sql = "select * from fruit_table where id = :id";

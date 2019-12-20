@@ -11,7 +11,7 @@ class appointment extends AppController{
         $data = array();
         $data["pagename"] = "appointment";
 
-        $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
+        $data["navigation"] = array("home"=>"/welcome","Books Api"=>"/books/showApi", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
         
         $random = substr( md5(rand()), 0, 7);
         $data["cap"]=$random;

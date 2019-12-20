@@ -11,7 +11,7 @@ class portfolio extends AppController{
         $data = array();
         $data["pagename"] = "portfolio";
 
-        $data["navigation"] = array("home"=>"/welcome", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
+        $data["navigation"] = array("home"=>"/welcome","Books Api"=>"/books/showApi", "portfolio"=>"/portfolio", "appointment"=>"/appointment", "login"=>"/login");
         
         $this->parent->getView("header",$data);
         $this->parent->getView("portfolioBody");
